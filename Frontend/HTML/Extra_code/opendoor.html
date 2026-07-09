@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .box {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: #3498db;
+      overflow: hidden;
+    }
+
+    .door-left,
+    .door-right {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #2ecc71;
+      transition: transform 0.5s ease;
+    }
+
+    .door-left {
+      left: 0;
+      transform-origin: right center;
+    }
+
+    .door-right {
+      right: 0;
+      transform-origin: left center;
+    }
+
+    .box:hover .door-left {
+      transform: rotateY(-90deg);
+    }
+
+    .box:hover .door-right {
+      transform: rotateY(90deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="door-left">
+        <img src="assets/images/about-bg.jpg" alt="can't images" class="bgset">
+    </div>
+    <div class="door-right">
+       
+    </div>
+  </div>
+</body>
+</html>

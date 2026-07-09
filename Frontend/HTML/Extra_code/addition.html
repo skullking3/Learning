@@ -1,0 +1,30 @@
+<html>
+<head>
+<title> my first form</title>
+<script>
+function sum()
+{
+var x=document.frm.t1.value;
+var y=document.frm.t2.value;
+var n1=parseInt(x);
+var n2=parseInt(y);
+var res=n1+n2;
+document.frm.t3.value=""+res;
+//alert("sum is"+res);
+}
+
+</script>
+</head>
+<body>
+<form name="frm">
+<b>Enter Your First Number</b>
+	<input type="text" name="t1" placeholder="enter value">
+	<br>
+<b>Enter Your Second Number</b>
+	<input type="text" name="t2" placeholder="enter value">
+	<br>
+<input onclick="sum()" type="button" value="Add" ">
+<p>result<p><input type="text" name="t3">
+
+</body>
+</html>

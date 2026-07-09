@@ -1,0 +1,28 @@
+<html>
+<head>
+<title> my first form</title>
+<script>
+function sum()
+{
+var x=document.frm.t1.value;
+var n1=parseInt(x);
+var i=2*22/7*x;
+var j=22/7*x*x;
+document.frm.cir.value=i;
+document.frm.area.value=j;
+//alert("sum is"+res);
+}
+
+</script>
+</head>
+<body>
+<form name="frm">
+<b>Enter Your Radius Value</b>
+	<input type="text" name="t1" placeholder="enter value">
+	<br>
+<input onclick="sum()" type="button" value="Calculate">
+<p>Circumference</p><input type="text" name="cir">
+<p>Area</p><input type="text" name="area">
+
+</body>
+</html>

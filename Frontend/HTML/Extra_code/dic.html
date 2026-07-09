@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+</head>
+<body>
+    <style>
+        #outer{
+            height: 500px;
+            width: 500px;
+            border: 2px solid black;
+            border-radius: 50px 50px 50px 50px;
+            padding: 100px;
+            box-shadow: 5px 5px 5px 5px grey ;
+        }
+
+    </style>
+    <script>
+            async function check(){
+                // window.alert("hiiii..");
+                var w = document.getElementById('word').value;
+                var url=`https://api.dictionaryapi.dev/api/v2/entries/en/${w}`;
+                var res = await fetch(url);
+                var data = await res.json();
+                console.log(data);
+                document.getElementById('mean').innerHTML=data[0]['meanings'][0]['definitions'][0]['definition'];
+
+            }
+    </script>
+</body>
+        <div id="outer">
+            <h1>Dictionary App</h1>
+            <input type="text" id="word">
+            <input type="button" value="Check" onclick="check()"> <br>
+            <span>Meaning:</span><span id="mean"></span>
+        </div>
+</html>

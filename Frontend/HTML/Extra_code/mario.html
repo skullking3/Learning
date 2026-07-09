@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        canvas {
+            border: 1px solid #000;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+    <title>Mario Game</title>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+    <script>
+        // Mario object
+        const mario = {
+            x: 50,
+            y: 300,
+            width: 40,
+            height: 60,
+            color: 'red',
+            velocity: 0,
+            jumping: false
+        };
+
+        // Gravity
+        const gravity = 1;
+
+        // Canvas
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Handle key events
+        const keys = {};
+        window.addEventListener('keydown', (e) => keys[e.key] = true);
+        window.addEventListener('keyup', (e) => keys[e.key] = false);
+
+        // Game loop
+        function gameLoop() {
+            // Update
+            update();
+
+            // Render
+            render();
+
+            // Repeat
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Update function
+        function update() {
+            // Move Mario based on keys
+            if (keys['ArrowRight'] && mario.x < canvas.width - mario.width) {
+                mario.x += 5;
+            }
+            if (keys['ArrowLeft'] && mario.x > 0) {
+                mario.x -= 5;
+            }
+
+            // Jumping logic
+            if (keys['ArrowUp'] && !mario.jumping) {
+                mario.velocity = -15;
+                mario.jumping = true;
+            }
+
+            // Apply gravity
+            mario.y += mario.velocity;
+            mario.velocity += gravity;
+
+            // Check if Mario is on the ground
+            if (mario.y > canvas.height - mario.height) {
+                mario.y = canvas.height - mario.height;
+                mario.jumping = false;
+            }
+        }
+
+        // Render function
+        function render() {
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw Mario
+            ctx.fillStyle = mario.color;
+            ctx.fillRect(mario.x, mario.y, mario.width, mario.height);
+        }
+
+        // Start the game loop
+        gameLoop();
+    </script>
+</body>
+</html>
