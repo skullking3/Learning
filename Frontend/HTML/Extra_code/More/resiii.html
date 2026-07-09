@@ -1,0 +1,88 @@
+<!doctype html>
+ <html>
+   <head>
+     <title>
+	Registration Page 
+     </title>
+   </head>
+<style>
+tbody {background-color: powderblue;}
+thead {background-color: red;} 
+</style>
+   
+ <body bgcolor ="pink">
+      <table style= "border:2px solid black;" align="center" >
+      <thead>
+         <tr>
+         <th colspan="2"  style= "color:blue" "border:10px ridge red;text-align:center;">Registration</th>
+         </tr>
+      </thead>
+ <tbody>
+         <tr>     
+	 <td style= "border:2px solid black;text-align:center;">NAME:</td> 
+	 <td style= "border:2px solid black;text-align:center;">
+		    <input type= "textbox" name="fname" value="" ></td>
+         </tr>
+         <tr>		        
+         <td style= "border:2px solid black;text-align:center;">Email:</td>
+	 <td style= "border:2px solid black;text-align:center;">
+		    <input type="textbox" name="email"></td>
+         <tr>										
+	 <td style= "border:2px solid black;text-align:center;">  Password:   	    </td>
+	 <td style= "border:2px solid black;text-align:center;">  
+		     <input type="password" name="password" placeholder="Please enter password" /> </td>
+         </tr>
+
+         </tr>
+         <tr>						 
+	 <td style= "border:2px solid black;text-align:center;">Gender: </td>
+	 <td style= "border:2px solid black;text-align:center;"> 
+	            <input type="radio" name="gender" value="male" id="gender1"/>male
+                    <input type="radio" name="gender" value="female" id="gender2"/>female
+                    <input type="radio" name="gender" value="others" id="gender3"/>others
+	 </td>
+         </tr>
+         <tr>										
+	 <td style= "border:2px solid black;text-align:center;">	Date of birth:   	    </td>
+	 <td style= "border:2px solid black;text-align:center;">  <input type="date" name="DOB" />     </td>
+         </tr>
+		
+         <tr>	
+         <td style= "border:2px solid black;text-align:center;"> Select Country</td>							
+	 <td style= "border:2px solid black;text-align:center;"> <select name="country">
+                <option value = "IN"> India    </option>
+                <option value = "NE"> Nepal    </option>
+                <option value = "OTH"> Other  </option>
+                </select>
+         </td>
+	 </tr>
+         <tr>										
+	 <td style= "border:2px solid black;text-align:center;">  Phone Number:   	    </td>
+	 <td style= "border:2px solid black;text-align:center;">  
+		     <input type="text" name="mobile_no" placeholder="" /> </td>
+         </tr>
+        
+         <tr>										
+	 <td style= "border:2px solid black;text-align:center;">  file upload:	    </td>
+	 <td style= "border:2px solid black;text-align:center;">  <input type="file" name= "filename" /> </td>
+         </tr>
+	 <tr>
+	 <td style= "border:2px solid black;text-align:center;">   Hobbies 		    </td>
+	 <td style= "border:2px solid black;text-align:center;"> 
+	 	    <input type="checkbox" name="hobby[]" value="reading" id="hobby1"/>reading
+                    <input type="checkbox" name="hobby[]" value="watching movies" id="hobby2"/>watching movies
+                    <input type="checkbox" name="hobby[]" value="dancing" id="hobby3"/>dancing
+	 </td>
+	 </tr>	
+         <tr>		
+	 <td style= "border:2px solid black;text-align:center;"  colspan="2">  
+		     <input type="submit" name="Register" value="register" /> </td>
+         </tr>		
+
+
+
+
+</table>
+
+</body>
+</html>
